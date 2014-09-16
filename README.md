@@ -15,7 +15,7 @@ All the pages are stored on GitHub, and we encourage anyone to join and contribu
 
 ### About the team
 
-This webpage was first created as part of the TGAC workshop on science reproducibility, by:
+This webpage was first created as part of the TGAC workshop on Open Reproducible Science, by:
 
 Richard Smith-Unna
 Jelena Aleksic
