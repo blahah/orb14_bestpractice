@@ -37,7 +37,7 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
 
 ### Steps
 
-How to collect the data. Why each thing is imporant.
+How to collect the data. Why each thing is important - what downstream steps does it contribute to, or why is it crucial for reproducibility.
 
 ### Reporting
 =======
@@ -59,10 +59,6 @@ You **should** record:
 
 - Some thing
 - Some other thing
-
-#### Explanation
-
-(why each thing is important - what downstream steps does it contribute to, or why is it crucial for reproducibility)
 
 See: [Sample metadata file template]()
 
