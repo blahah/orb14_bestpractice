@@ -9,7 +9,7 @@ tagline:
 
 ## How to contribute
 
-Take part on Github at https://github.com/Blahah/orb14_bestpractice.
+Take part [on Github](https://github.com/Blahah/orb14_bestpractice).
 
 It's best to create an issue to propose a change before making it. Please include citations.
 
