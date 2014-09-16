@@ -32,11 +32,22 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
 
 
 ### Preprocessing
-- [Tophat alignment protocol]
+- [Identifying and removing low quality reads]
+- [Triming adapters](http://genomicsadventures.wordpress.com/2013/05/02/trimming-illumina-sequencing-adapters/)
 
 
 ### Alignment
+- [Tophat alignment protocol](http://www.ncbi.nlm.nih.gov/pubmed/22383036)
+
 
 ### Quantification
+- [Best practices for counting reads]
+- [Available software]
+
+
+### Normalization
+- [NGS best practice overview for beginners](http://biorxiv.org/content/early/2014/06/19/006403)
+
 
 ### Differential expression
+- [Differential expression analysis with DEseq](http://bioconductor.org/packages/release/bioc/vignettes/DESeq/inst/doc/DESeq.pdf)
