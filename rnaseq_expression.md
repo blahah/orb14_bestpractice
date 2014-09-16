@@ -24,7 +24,7 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
 
 #### Workflows
 
-- [Fry lab RNASeq pipeline v1.0](workflows/frylab_v1.0.html)
+- [Fry lab RNASeq pipeline v1.0](workflows/rnaseq_expression/frylab_v1.0.html)
 - [TGAC RNASeq pipeline v1.0]()
 - [NGLess v1.2](workflows/rnaseq_expression/ngless_1.2.html)
 
