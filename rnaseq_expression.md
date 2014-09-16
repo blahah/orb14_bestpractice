@@ -23,16 +23,16 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
 
 ### Data
 
-- [Medata best practice guidelines]
+- [Medata best practice guidelines]()
 - [Sample metadata file template]()
 
 ### QC
-- [QC interpretation guide]
-- [List of QC tools]
+- [QC interpretation guide]()
+- [List of QC tools]()
 
 
 ### Preprocessing
-- [Identifying and removing low quality reads]
+- [Identifying and removing low quality reads]()
 - [Triming adapters](http://genomicsadventures.wordpress.com/2013/05/02/trimming-illumina-sequencing-adapters/)
 
 
@@ -41,8 +41,8 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
 
 
 ### Quantification
-- [Best practices for counting reads]
-- [Available software]
+- [Best practices for counting reads]()
+- [Available software]()
 
 
 ### Normalization
