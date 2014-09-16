@@ -9,7 +9,7 @@ markdown: redcarpet
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
-title : NGS Best Practie
+title : NGS Best Practice
 tagline: Community-curated best practice recommendations
 author :
   name : ORB2014 Best Practice Working Group
