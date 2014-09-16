@@ -170,23 +170,25 @@ The following steps are performed in R. We use the DEseq package to illustrate s
 - edgeR
 
 Reading in required libraries:
-```R
+```bash
 > library("DESeq")
 ```
 
 Reading in counts data:
-> data <- read.table("htseq_gene_trans_counts_table.txt", header=T,
+```bash
+data <- read.table("htseq_gene_trans_counts_table.txt", header=T,
                          row.names=1, sep="\t")
-
+```
 
 DEseq requires a metadata table. Here is an example with multiple conditions:
-> ribosomalDesign = data.frame(
+```bash
+ribosomalDesign = data.frame(
   rownames =colnames(counts),
   condition = conds,
   libType = c(rep("single-end", 16)),
   family= c(rep("unrelated", 4), rep("family", 12)),
   gender =c(rep("female", 12), rep("male", 4)))
-
+```
 
 #Normalization
 
@@ -194,17 +196,22 @@ DEseq requires a metadata table. Here is an example with multiple conditions:
 For normalization, DEseq estimates scaling factors. These are numbers that the raw data counts are divided with in order to make the data across different replicates and conditions directly comparable with each other.
 
 To calculate size factors:
-> cds <- newCountDataSet( counts, conds )
-> cds <- estimateSizeFactors( cds )
+```
+cds <- newCountDataSet( counts, conds )
+cds <- estimateSizeFactors( cds )
+```
 
 To print out size factors for future use:
-> factors <- sizeFactors( cds )
-> write.table(factors, file="results/size_factors.txt", sep="\t")
+```
+factors <- sizeFactors( cds )
+write.table(factors, file="results/size_factors.txt", sep="\t")
+```
 
 To print out the normalized counts:
-> nCounts <- counts(cds, normalized=TRUE)
-> write.table(nCounts, file="results/normalized_counts.txt", sep="\t")
-
+```
+nCounts <- counts(cds, normalized=TRUE)
+write.table(nCounts, file="results/normalized_counts.txt", sep="\t")
+```
 
 #RNA-seq technical QC
 
