@@ -171,7 +171,7 @@ The following steps are performed in R. We use the DEseq package to illustrate s
 
 Reading in required libraries:
 ```bash
-> library("DESeq")
+library("DESeq")
 ```
 
 Reading in counts data:
@@ -216,11 +216,14 @@ write.table(nCounts, file="results/normalized_counts.txt", sep="\t")
 #RNA-seq technical QC
 
 Plotting dispersion estimates:
-> pdf(file="results/Dispersion.pdf");
-> plotDispEsts(cds)
-> dev.off();
+```
+pdf(file="results/Dispersion.pdf");
+plotDispEsts(cds)
+dev.off();
+```
 
 Gene scatterplot:
+```
 geneScatterplot <- function( x, y, xlab, ylab, col ) {
   plot( NULL, xlim=c( -.1, 6.2 ), ylim=c( -1, 6.2 ),
         xaxt="n", yaxt="n", xaxs="i", yaxs="i", asp=1,
@@ -251,10 +254,11 @@ geneScatterplot( nCounts[,1], nCounts[,2],
 geneScatterplot( nCounts[,1], nCounts[,3],
                  "normalized read count, Control1", "normalized read count, Control2",
                  colControl )
-
+```
 
 
 Differential expression analysis
 
-
+```
 results <- nbinomTest( cds, "sample", "control" )
+```
