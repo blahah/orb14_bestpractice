@@ -124,36 +124,45 @@ It is always a good idea to have a look at what your data looks like, as this wi
 Bam files can be opened directly in IGV, as long as an index file (.bai) is included in the same folder.
 
 Index files can be created using samtools:
-> samtools index sample1_unique.bam bam_files/sample1_unique.bai
-
+```bash
+samtools index sample1_unique.bam bam_files/sample1_unique.bai
+```
 
 ##On UCSC
 
 For uploading bam files to UCSC, it is usual to create a bigwig file for upload. This is done in multiple steps:
 
 Creating a bedgraph file:
+```bash
 genomeCoverageBed -bg -split -ibam bam_files/sample1_unique.bam -g ~/software/UCSC/hg38_genome_UCSC.table > bedgraph/sample1_unique.bedgraph
+```
 
 Replace MT with M to match UCSC chromosome names. If it isn't included already, you may also need to add "chr" to the beginning of each chromosome name.
 
-> sed -e "s/chrMT/chrM/ig" bedgraph/sample1_unique.bedgraph > /tmp/tempfile.tmp
+```bash
+sed -e "s/chrMT/chrM/ig" bedgraph/sample1_unique.bedgraph > /tmp/tempfile.tmp
      mv /tmp/tempfile.tmp bedgraph/sample1_unique.bedgraph
+```
 
 To add "chr", you can use:
-> awk '{print "chr"$0}' bedgraph/sample1_unique.bedgraph > bedgraph/sample1_unique_chr.bedgraph
+```bash
+awk '{print "chr"$0}' bedgraph/sample1_unique.bedgraph > bedgraph/sample1_unique_chr.bedgraph
+```
 
 Convert bedgraph to bigwig:
-> ./bedGraphToBigWig bedgraph/sample1_unique.bedgraph hg38_genome_UCSC.table bigwig/sample1_unique.bw
+```bash
+./bedGraphToBigWig bedgraph/sample1_unique.bedgraph hg38_genome_UCSC.table bigwig/sample1_unique.bw
 This is done using UCSC scripts
 You will need to have a table of UCSC chromosome lengths. If you don't have this, you can fetch it using this script.
-
+```
 
 #Generating summary counts
 
 In preparation for a differential expression analysis, it is usual to acquire a file of summary counts per feature of interest, for example per gene or per exon. The htseq tool can perform this:
 
-> htseq-count -i gene_id -m union sam_files/sample1_unique.sam ~/genomes/Homo_sapiens.GRCh38.76.withchr.gtf > sample1_gene_counts.txt
-
+```bash
+htseq-count -i gene_id -m union sam_files/sample1_unique.sam ~/genomes/Homo_sapiens.GRCh38.76.withchr.gtf > sample1_gene_counts.txt
+```
 
 #Reading data into R
 
@@ -161,7 +170,9 @@ The following steps are performed in R. We use the DEseq package to illustrate s
 - edgeR
 
 Reading in required libraries:
+```R
 > library("DESeq")
+```
 
 Reading in counts data:
 > data <- read.table("htseq_gene_trans_counts_table.txt", header=T,
