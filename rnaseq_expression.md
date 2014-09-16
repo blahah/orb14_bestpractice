@@ -17,7 +17,7 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
 5. [Differential expression](#differential-expression)
 
 
-<div class="alert-message warning">
+<div class="alert-message warning block-message">
   <a class="close" href="#">×</a>
   <p><strong>Note:</strong> this document follows <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> definitions of *must*, *must not*, *should* and *should not*.</p>
 </div>
@@ -30,7 +30,12 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
 
 ### Data
 
-It is crucial to document the way data was generated, and to report this when archiving your data and in publication.
+<div class="alert-message block-message info">
+  <a class="close" href="#">×</a>
+  <p>It is crucial to document the way data was generated, and to report this when archiving your data and in publication.</p>
+</div>
+
+
 
 You **must** record:
 
