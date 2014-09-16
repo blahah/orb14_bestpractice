@@ -11,9 +11,14 @@ You can download the sample pipeline file here.
 
 
 #Table of contents
-(...top sections)
+0. [Pre-requirements](#Pre-requirements)
+1. [Fetching data](#Fetching data)
+2. [Custom sequence]()
+3. [Data management]()
+4. [Initial QC]()
+5. [Read alignment]()
 
-##Pre-requirements
+#Pre-requirements
 
 In order to navigate this document, you will need to have basic familiarity with the Unix command line.
 For an introduction, check out our Unix basics guide.
