@@ -16,7 +16,11 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
 4. [Quantification](#quantification)
 5. [Differential expression](#differential-expression)
 
-Note: this document follows [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) definitions of *must*, *must not*, *should* and *should not*.
+
+<div class="alert-message warning">
+  <a class="close" href="#">×</a>
+  <p><strong>Note:</strong> this document follows <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> definitions of *must*, *must not*, *should* and *should not*.</p>
+</div>
 
 #### Workflows
 
