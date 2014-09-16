@@ -11,9 +11,14 @@ You can download the sample pipeline file here.
 
 
 #Table of contents
-(...top sections)
+0. [Pre-requirements](#Pre-requirements)
+1. [Fetching data](#Fetching data)
+2. [Custom sequence]()
+3. [Data management]()
+4. [Initial QC]()
+5. [Read alignment]()
 
-##Pre-requirements
+#Pre-requirements
 
 In order to navigate this document, you will need to have basic familiarity with the Unix command line.
 For an introduction, check out our Unix basics guide.
@@ -55,11 +60,11 @@ It is essential to check the data quality before proceeding. We illustrate the p
 - RSeqC
 - Fastx
 
-#Sample FastQC command:
+Sample FastQC command:
 
 '''bash
 > fastqc raw_data/*
-''
+'''
 
 This creates an html QC page for each raw data file.
 
@@ -74,7 +79,7 @@ Tophat is used to illustrate this step. For RNA-seq, it is essential to use a "t
 Other aligners appropriate for RNAseq include: ...
 
 If you are running Tophat for the first time, you will need to prepare the genome indices
-### genome index instructions
+[genome index instructions]()
 
 Warning: the Tophat step is long! It's a good idea to run it on a server or cluster, and make sure that you run the command so that hanging up the connection doesn't interrupt it, e.g. by using nohup.
 
@@ -103,11 +108,11 @@ If the downstream applications require bam files, you can then convert this back
 > samtools view -S -b sam_files/sample1_unique.sam > bam_files/sample1_unique.bam
 
 
-Visualising data in a genome browser
+#Visualising data in a genome browser
 
 It is always a good idea to have a look at what your data looks like, as this will flag some more obvious errors.
 
-In IGV
+##In IGV
 
 Bam files can be opened directly in IGV, as long as an index file (.bai) is included in the same folder.
 
@@ -115,7 +120,7 @@ Index files can be created using samtools:
 > samtools index sample1_unique.bam bam_files/sample1_unique.bai
 
 
-On UCSC
+##On UCSC
 
 For uploading bam files to UCSC, it is usual to create a bigwig file for upload. This is done in multiple steps:
 
@@ -127,13 +132,13 @@ Replace MT with M to match UCSC chromosome names. If it isn't included already, 
 > sed -e "s/chrMT/chrM/ig" bedgraph/sample1_unique.bedgraph > /tmp/tempfile.tmp
      mv /tmp/tempfile.tmp bedgraph/sample1_unique.bedgraph
 
-### To add "chr", you can use:
-### > awk '{print "chr"$0}' bedgraph/sample1_unique.bedgraph > bedgraph/sample1_unique_chr.bedgraph
+To add "chr", you can use:
+> awk '{print "chr"$0}' bedgraph/sample1_unique.bedgraph > bedgraph/sample1_unique_chr.bedgraph
 
 Convert bedgraph to bigwig:
 > ./bedGraphToBigWig bedgraph/sample1_unique.bedgraph hg38_genome_UCSC.table bigwig/sample1_unique.bw
-### This is done using UCSC scripts
-### You will need to have a table of UCSC chromosome lengths. If you don't have this, you can fetch it using this script.
+This is done using UCSC scripts
+You will need to have a table of UCSC chromosome lengths. If you don't have this, you can fetch it using this script.
 
 
 Generating summary counts
