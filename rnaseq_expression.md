@@ -7,7 +7,7 @@ tagline:
 
 ### Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This page gives guidelines and tutorials for different components of an RNA-seq analysis. To get straight into the analysis, check out one of our workflows, or to learn more about the best practices for each step, have a look at the guides below.
 
 0. [Data](#data)
 1. [QC](#qc)
@@ -24,12 +24,31 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ### Data
 
+- [Medata best practice guidelines]()
+- [Sample metadata file template]()
+
 ### QC
+- [QC interpretation guide]()
+- [List of QC tools]()
+
 
 ### Preprocessing
+- [Identifying and removing low quality reads]()
+- [Triming adapters](http://genomicsadventures.wordpress.com/2013/05/02/trimming-illumina-sequencing-adapters/)
+
 
 ### Alignment
+- [Tophat alignment protocol](http://www.ncbi.nlm.nih.gov/pubmed/22383036)
+
 
 ### Quantification
+- [Best practices for counting reads]()
+- [Available software]()
+
+
+### Normalization
+- [NGS best practice overview for beginners](http://biorxiv.org/content/early/2014/06/19/006403)
+
 
 ### Differential expression
+- [Differential expression analysis with DEseq](http://bioconductor.org/packages/release/bioc/vignettes/DESeq/inst/doc/DESeq.pdf)
