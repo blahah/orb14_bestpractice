@@ -21,7 +21,7 @@ Community curated best practice recommendations for processing of data from NGS 
  </div>
   <div class="span4">
     <h2>SNP calling</h2>
-    <p>SNP calling workflows and best practices</p>
+    <p>SNP calling workflows and best practices. Includes guidance about experimental design and analysis for rare variant analysis.</p>
     <p><a class="btn btn-default" href="snp_calling.html" role="button">View details &raquo;</a></p>
   </div>
 </div>
