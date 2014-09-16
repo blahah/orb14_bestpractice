@@ -35,15 +35,12 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
   <p>It is crucial to document the way data was generated, and to report this when archiving your data and in publication.</p>
 </div>
 
-<<<<<<< HEAD
 ### Steps
 
 How to collect the data. Why each thing is imporant.
 
 ### Reporting
 =======
-
->>>>>>> ef53f5ce71f7d8641ba0331a235ff845c642b9d3
 
 You **must** record:
 
@@ -57,6 +54,11 @@ You **must** record:
 - Insert size distribution parameters:
   - mean
   - standard deviation
+
+You **should** record:
+
+- Some thing
+- Some other thing
 
 #### Explanation
 
