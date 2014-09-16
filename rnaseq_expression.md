@@ -20,7 +20,7 @@ Note: this document follows [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) def
 
 #### Workflows
 
-- [Fry lab RNASeq pipeline v1.0](workflows/frylab_v1.0.html)
+- [Fry lab RNASeq pipeline v1.0](workflows/rnaseq_expression/frylab_v1.0.html)
 - [TGAC RNASeq pipeline v1.0]()
 - [NGLess v1.2](workflows/rnaseq_expression/ngless_1.2.html)
 
