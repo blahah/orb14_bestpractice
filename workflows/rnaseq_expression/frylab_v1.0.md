@@ -32,9 +32,9 @@ If you are running analysis on a remote server or cluster, please check out our 
 
 You can fetch data using wget. You then need to uncompress SRA files. The SRA toolkit tool does this.
 
-'''bash
+```bash
 /sratoolkit/bin/fastq-dump --split-3 ./SRR445718.sra
-'''
+```
 
 Rather than being installed as a package, this is just a script that you execute.
 The purpose of the "--split-3 parameter is to make the script check whether the files are single end or paired end.
@@ -62,9 +62,9 @@ It is essential to check the data quality before proceeding. We illustrate the p
 
 Sample FastQC command:
 
-'''bash
+```bash
 > fastqc raw_data/*
-'''
+```
 
 This creates an html QC page for each raw data file.
 
@@ -72,7 +72,7 @@ This creates an html QC page for each raw data file.
 For help with interpreting the QC results, go to our QC interpretation help page.
 
 
-Read alignment
+#Read alignment
 
 Tophat is used to illustrate this step. For RNA-seq, it is essential to use a "transcript-aware" aligner. For example, Bowtie will align reads to the genome, but does not consider splice junctions, so will fail to align a considerable portion of the reads that do not align to the genome exactly. The way Tophat works is that it initially runs Bowtie, but later considers gene annotations for mapping reads to splice junctions.
 
@@ -85,7 +85,9 @@ Warning: the Tophat step is long! It's a good idea to run it on a server or clus
 
 Sample Tophat command:
 
+```bash
  > tophat -p 4 -o sample1_thout -G ~/genomes/Homo_sapiens.GRCh38.76.withchr.gtf -m 2 /home/ja313/genomes/Homo_sapiens/Ensembl/GRCh38/Sequence/Bowtie2Index/hg38_genome sample1.fq.gz
+```
 
 -p specifies the number of processors to use. If you are running your analysis on a multiprocessor machine, using this setting to run things in parallel will speed up your analysis
 -o specifies the output directory that will be created for the sample in question
@@ -99,14 +101,19 @@ The output is a .bam file of aligned reads:
 accepted_hits.bam
 
 This file is a binary file. It can be converted to .sam using
-> samtools view -h sample1_thout/accepted_hits.bam > sam_files/sample1_accepted.sam
+```bash
+samtools view -h sample1_thout/accepted_hits.bam > sam_files/sample1_accepted.sam
+```
 
 The original file of accepted hits will contain a range of results including multiple alignments. To filter for unique reads only, you can use the flags in the sam file to select the right lines:
-> egrep '(NH:i:1)|(^@)' sam_files/sample1_accepted.sam > sam_files/sample1_unique.sam
+```bash
+egrep '(NH:i:1)|(^@)' sam_files/sample1_accepted.sam > sam_files/sample1_unique.sam
+```
 
 If the downstream applications require bam files, you can then convert this back to bam again using samtools:
-> samtools view -S -b sam_files/sample1_unique.sam > bam_files/sample1_unique.bam
-
+```bash
+samtools view -S -b sam_files/sample1_unique.sam > bam_files/sample1_unique.bam
+```
 
 #Visualising data in a genome browser
 
