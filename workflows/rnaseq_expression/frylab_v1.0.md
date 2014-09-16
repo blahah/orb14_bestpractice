@@ -101,16 +101,19 @@ The output is a .bam file of aligned reads:
 accepted_hits.bam
 
 This file is a binary file. It can be converted to .sam using
+
 ```bash
 samtools view -h sample1_thout/accepted_hits.bam > sam_files/sample1_accepted.sam
 ```
 
 The original file of accepted hits will contain a range of results including multiple alignments. To filter for unique reads only, you can use the flags in the sam file to select the right lines:
+
 ```bash
 egrep '(NH:i:1)|(^@)' sam_files/sample1_accepted.sam > sam_files/sample1_unique.sam
 ```
 
 If the downstream applications require bam files, you can then convert this back to bam again using samtools:
+
 ```bash
 samtools view -S -b sam_files/sample1_unique.sam > bam_files/sample1_unique.bam
 ```
@@ -124,6 +127,7 @@ It is always a good idea to have a look at what your data looks like, as this wi
 Bam files can be opened directly in IGV, as long as an index file (.bai) is included in the same folder.
 
 Index files can be created using samtools:
+
 ```bash
 samtools index sample1_unique.bam bam_files/sample1_unique.bai
 ```
@@ -133,6 +137,7 @@ samtools index sample1_unique.bam bam_files/sample1_unique.bai
 For uploading bam files to UCSC, it is usual to create a bigwig file for upload. This is done in multiple steps:
 
 Creating a bedgraph file:
+
 ```bash
 genomeCoverageBed -bg -split -ibam bam_files/sample1_unique.bam -g ~/software/UCSC/hg38_genome_UCSC.table > bedgraph/sample1_unique.bedgraph
 ```
@@ -145,11 +150,13 @@ sed -e "s/chrMT/chrM/ig" bedgraph/sample1_unique.bedgraph > /tmp/tempfile.tmp
 ```
 
 To add "chr", you can use:
+
 ```bash
 awk '{print "chr"$0}' bedgraph/sample1_unique.bedgraph > bedgraph/sample1_unique_chr.bedgraph
 ```
 
 Convert bedgraph to bigwig:
+
 ```bash
 ./bedGraphToBigWig bedgraph/sample1_unique.bedgraph hg38_genome_UCSC.table bigwig/sample1_unique.bw
 This is done using UCSC scripts
@@ -170,17 +177,20 @@ The following steps are performed in R. We use the DEseq package to illustrate s
 - edgeR
 
 Reading in required libraries:
+
 ```bash
 library("DESeq")
 ```
 
 Reading in counts data:
+
 ```bash
 data <- read.table("htseq_gene_trans_counts_table.txt", header=T,
                          row.names=1, sep="\t")
 ```
 
 DEseq requires a metadata table. Here is an example with multiple conditions:
+
 ```bash
 ribosomalDesign = data.frame(
   rownames =colnames(counts),
@@ -196,18 +206,21 @@ ribosomalDesign = data.frame(
 For normalization, DEseq estimates scaling factors. These are numbers that the raw data counts are divided with in order to make the data across different replicates and conditions directly comparable with each other.
 
 To calculate size factors:
+
 ```
 cds <- newCountDataSet( counts, conds )
 cds <- estimateSizeFactors( cds )
 ```
 
 To print out size factors for future use:
+
 ```
 factors <- sizeFactors( cds )
 write.table(factors, file="results/size_factors.txt", sep="\t")
 ```
 
 To print out the normalized counts:
+
 ```
 nCounts <- counts(cds, normalized=TRUE)
 write.table(nCounts, file="results/normalized_counts.txt", sep="\t")
@@ -216,6 +229,7 @@ write.table(nCounts, file="results/normalized_counts.txt", sep="\t")
 #RNA-seq technical QC
 
 Plotting dispersion estimates:
+
 ```
 pdf(file="results/Dispersion.pdf");
 plotDispEsts(cds)
@@ -223,6 +237,7 @@ dev.off();
 ```
 
 Gene scatterplot:
+
 ```
 geneScatterplot <- function( x, y, xlab, ylab, col ) {
   plot( NULL, xlim=c( -.1, 6.2 ), ylim=c( -1, 6.2 ),
