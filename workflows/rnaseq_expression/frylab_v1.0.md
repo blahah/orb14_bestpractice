@@ -148,14 +148,14 @@ This is done using UCSC scripts
 You will need to have a table of UCSC chromosome lengths. If you don't have this, you can fetch it using this script.
 
 
-Generating summary counts
+#Generating summary counts
 
 In preparation for a differential expression analysis, it is usual to acquire a file of summary counts per feature of interest, for example per gene or per exon. The htseq tool can perform this:
 
 > htseq-count -i gene_id -m union sam_files/sample1_unique.sam ~/genomes/Homo_sapiens.GRCh38.76.withchr.gtf > sample1_gene_counts.txt
 
 
-Reading data into R
+#Reading data into R
 
 The following steps are performed in R. We use the DEseq package to illustrate some of the QC steps. Other popular packages include:
 - edgeR
@@ -177,7 +177,7 @@ DEseq requires a metadata table. Here is an example with multiple conditions:
   gender =c(rep("female", 12), rep("male", 4)))
 
 
-Normalization
+#Normalization
 
 
 For normalization, DEseq estimates scaling factors. These are numbers that the raw data counts are divided with in order to make the data across different replicates and conditions directly comparable with each other.
@@ -195,7 +195,7 @@ To print out the normalized counts:
 > write.table(nCounts, file="results/normalized_counts.txt", sep="\t")
 
 
-RNA-seq technical QC
+#RNA-seq technical QC
 
 Plotting dispersion estimates:
 > pdf(file="results/Dispersion.pdf");
