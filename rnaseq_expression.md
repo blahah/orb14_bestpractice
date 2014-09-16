@@ -16,6 +16,8 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
 4. [Quantification](#quantification)
 5. [Differential expression](#differential-expression)
 
+![RNA Seq Flowchart](assets/images/rnaseq-flowchart.svg)
+
 #### Workflows
 
 - [Fry lab RNASeq pipeline v1.0](workflows/frylab_v1.0.html)
