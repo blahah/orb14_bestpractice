@@ -19,10 +19,10 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
 
 <div class="alert-message warning block-message">
   <a class="close" href="#">×</a>
-  <p><strong>Note:</strong> this document follows <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> definitions of *must*, *must not*, *should* and *should not*.</p>
+  <p><strong>Note:</strong> this document follows <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> definitions of <strong>must</strong>, <strong>must not</strong>, <strong>should</strong> and <strong>should not</strong>.</p>
 </div>
 
-#### Workflows
+#### Workflows meeting this standard
 
 - [Fry lab RNASeq pipeline v1.0](workflows/rnaseq_expression/frylab_v1.0.html)
 - [TGAC RNASeq pipeline v1.0]()
@@ -35,7 +35,11 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
   <p>It is crucial to document the way data was generated, and to report this when archiving your data and in publication.</p>
 </div>
 
+#### Steps
 
+How to collect the data. Why each thing is imporant.
+
+#### Reporting
 
 You **must** record:
 
@@ -45,14 +49,10 @@ You **must** record:
 - Sequencing chemistry and protocol
 - Adapter and primer sequences
 - Whether the reads are paired-end
-- Read size
+- Read length
 - Insert size distribution parameters:
   - mean
   - standard deviation
-
-#### Explanation
-
-(why each thing is important - what downstream steps does it contribute to, or why is it crucial for reproducibility)
 
 See: [Sample metadata file template]()
 
