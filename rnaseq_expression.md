@@ -42,6 +42,10 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
 
 How to collect the data. Why each thing is important - what downstream steps does it contribute to, or why is it crucial for reproducibility.
 
+You **must**:
+
+- Submit your raw reads to *either* the [NCBI Sequence Read Archive](http://www.ncbi.nlm.nih.gov/books/NBK47529/) *or* the [EBI European Nucleotide Archive](http://www.ebi.ac.uk/ena/submit).
+
 ### Reporting
 =======
 
@@ -58,11 +62,6 @@ You **must** record:
   - mean
   - standard deviation
 
-You **should** record:
-
-- Some thing
-- Some other thing
-
 See: [Sample metadata file template]()
 
 ## QC
@@ -76,32 +75,44 @@ See: [Sample metadata file template]()
 
 You *must*:
 
-- **either** remove adapter sequences from your reads **or** remove reads that contain adapter sequences
-- **either** remove reads with low quality **or** trim low quality bases from reads
-- remove reads with a high proportion of ambiguous bases
+- **Either** remove adapter sequences from your reads **or** remove reads that contain adapter sequences
+- **Either** remove reads with low quality **or** trim low quality bases from reads
+- Remove reads with a high proportion of ambiguous bases **or** remove ambiguous bases from the ends of reads
 
 ### Reporting
 
-- [QC interpretation guide]()
-- [List of QC tools]()
+You *must*:
 
+- Follow the software reporting guidelines for any software you use
+- Report the number of reads present in each sample before and after trimming
 
 ## Preprocessing
 
-- [Identifying and removing low quality reads]()
-- [Triming adapters](http://genomicsadventures.wordpress.com/2013/05/02/trimming-illumina-sequencing-adapters/)
-
-
 ## Alignment
-- [Tophat alignment protocol](http://www.ncbi.nlm.nih.gov/pubmed/22383036)
 
+### Reporting
+
+You *must*:
+
+- Follow the software reporting guidelines for any software you use
+- Report whether you aligned to genome or transcriptome reference
+- If your reference was from a publicly available assembly, state its name and version
+- If your reference was from a *de-novo* assembly, fully report the assembly protocol
+- State the number and proportion of reads aligning for each sample
 
 ## Quantification
-- [Best practices for counting reads]()
-- [Available software]()
 
+### Reporting
+
+You *must*:
+
+- Follow the software reporting guidelines for any software you use
+- Report the raw counts of reads aligning to each feature (gene or transcript). The counts may optionally be effective counts.
+- Report normalised expression (RPKM if displaying a single sample, TPM if comparing multiple samples).
 
 ## Normalization
+
+
 - [NGS best practice overview for beginners](http://biorxiv.org/content/early/2014/06/19/006403)
 
 
