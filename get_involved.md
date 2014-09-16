@@ -3,6 +3,7 @@ layout: page
 title: Get involved
 header: Get involved
 group: navigation
+tagline:
 ---
 {% include JB/setup %}
 
