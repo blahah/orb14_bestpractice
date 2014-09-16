@@ -6,15 +6,14 @@ tagline:
 
 {% include JB/setup %}
 
-### - means "extra information for dropdown"
 
 You can download the sample pipeline file here.
 
 
-Table of contents
+#Table of contents
 (...top sections)
 
-Pre-requirements
+##Pre-requirements
 
 In order to navigate this document, you will need to have basic familiarity with the Unix command line.
 For an introduction, check out our Unix basics guide.
@@ -22,43 +21,48 @@ For an introduction, check out our Unix basics guide.
 If you are running analysis on a remote server or cluster, please check out our computing infrastructure for beginners guide.
 
 
-Fetching data
+#Fetching data
 
-From GEO
+##From GEO
 
 You can fetch data using wget. You then need to uncompress SRA files. The SRA toolkit tool does this.
 
+'''bash
 /sratoolkit/bin/fastq-dump --split-3 ./SRR445718.sra
+'''
 
-### Rather than being installed as a package, this is just a script that you execute.
-### The purpose of the "--split-3 parameter is to make the script check whether the files are single end or paired end.
-### When this parameter is included, the paired end files will be created as separate files.
+Rather than being installed as a package, this is just a script that you execute.
+The purpose of the "--split-3 parameter is to make the script check whether the files are single end or paired end.
+When this parameter is included, the paired end files will be created as separate files.
 
-Custom sequence
+##Custom sequence
 
 If you get data straight from a sequencer or from other sources, the raw data files appropriate for starting the analysis are .fq / .fastq.
 It is also fine to start with compressed files - e.g. .fq.gz. Most tools can deal with this and will uncompress them for you automatically for the purposes of the analysis.
 
 
-Data management
+#Data management
 
 It is a good idea to keep a folder of raw files that are untouched, which can then be used to reproduce the analysis if required. If you give them informative names, this can make the downstream analysis easier to follow.
 
 Storing metadata for future reference is also good practice. Here is a basic metadata template file.
 
 
-Initial QC
+#Initial QC
 
 It is essential to check the data quality before proceeding. We illustrate the process here using the FastQC tool. Other QC tools include:
 - RNAseQC
 - RSeqC
 - Fastx
 
-Sample FastQC command:
+#Sample FastQC command:
 
+'''bash
 > fastqc raw_data/*
-### This creates an html QC page for each raw data file.
-###
+''
+
+This creates an html QC page for each raw data file.
+
 
 For help with interpreting the QC results, go to our QC interpretation help page.
 
@@ -78,11 +82,11 @@ Sample Tophat command:
 
  > tophat -p 4 -o sample1_thout -G ~/genomes/Homo_sapiens.GRCh38.76.withchr.gtf -m 2 /home/ja313/genomes/Homo_sapiens/Ensembl/GRCh38/Sequence/Bowtie2Index/hg38_genome sample1.fq.gz
 
-### -p specifies the number of processors to use. If you are running your analysis on a multiprocessor machine, using this setting to run things in parallel will speed up your analysis
-### -o specifies the output directory that will be created for the sample in question
-### -G gives the relevant set of gene annotations
-### -m specifies the default number of sequence mismatches permitted
-### the genome index and sample file go on the end of the command
+-p specifies the number of processors to use. If you are running your analysis on a multiprocessor machine, using this setting to run things in parallel will speed up your analysis
+-o specifies the output directory that will be created for the sample in question
+-G gives the relevant set of gene annotations
+-m specifies the default number of sequence mismatches permitted
+the genome index and sample file go on the end of the command
 
 Results
 
