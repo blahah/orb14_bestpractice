@@ -16,6 +16,8 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
 4. [Quantification](#quantification)
 5. [Differential expression](#differential-expression)
 
+Note: this document follows [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) definitions of *must*, *must not*, *should* and *should not*.
+
 #### Workflows
 
 - [Fry lab RNASeq pipeline v1.0](workflows/frylab_v1.0.html)
@@ -24,15 +26,47 @@ This page gives guidelines and tutorials for different components of an RNA-seq 
 
 ### Data
 
-- [Medata best practice guidelines]()
-- [Sample metadata file template]()
+It is crucial to document the way data was generated, and to report this when archiving your data and in publication.
+
+You **must** record:
+
+- Experiment metadata as described at the [SRA/ENA](http://www.ebi.ac.uk/ena/submit/read-submission)
+- RNA extraction protocol
+- Fragmentation protocol
+- Sequencing chemistry and protocol
+- Adapter and primer sequences
+- Whether the reads are paired-end
+- Read size
+- Insert size distribution parameters:
+  - mean
+  - standard deviation
+
+#### Explanation
+
+(why each thing is important - what downstream steps does it contribute to, or why is it crucial for reproducibility)
+
+See: [Sample metadata file template]()
 
 ### QC
+
+All current sequencing technology is inherently error-prone, and mistakes or problems in the sequencing process can lead to problems in downstream analysis if they are not detected. It is crucial to examine the reads using quality control software to identify potential problems.
+
+#### Steps
+
+You *must*:
+
+- **either** remove adapter sequences from your reads **or** remove reads that contain adapter sequences
+- **either** remove reads with low quality **or** trim low quality bases from reads
+- remove reads with a high proportion of ambiguous bases
+
+#### Reporting
+
 - [QC interpretation guide]()
 - [List of QC tools]()
 
 
 ### Preprocessing
+
 - [Identifying and removing low quality reads]()
 - [Triming adapters](http://genomicsadventures.wordpress.com/2013/05/02/trimming-illumina-sequencing-adapters/)
 

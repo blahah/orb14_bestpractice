@@ -24,6 +24,8 @@ Community curated best practice recommendations for processing of data from NGS 
     <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
     <p><a class="btn btn-default" href="snp_calling.html" role="button">View details &raquo;</a></p>
   </div>
+</div>
+<div class="row">
   <div class="span4">
     <h2>CHiPseq</h2>
     <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>

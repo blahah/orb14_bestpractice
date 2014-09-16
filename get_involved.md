@@ -11,7 +11,7 @@ tagline:
 
 Take part [on Github](https://github.com/Blahah/orb14_bestpractice).
 
-It's best to create an issue to propose a change before making it. Please include citations.
+It's best to create an issue to propose a change before making it.
 
 ## Editing an existing workflow
 
@@ -21,4 +21,4 @@ If you are editing the standard steps of an existing analysis, please provide in
 
 ## Contributing a new workflow
 
-Please contribute any new workflows as GitHub pages. The workflow will be reviewed by the admins, and if it is found to follow best practices, will be added to the website.
+Please contribute any new workflows as GitHub pages. The workflow will be reviewed by the community, and if it is found to follow best practices, will be added to the website.
