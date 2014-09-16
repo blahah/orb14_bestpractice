@@ -1,6 +1,6 @@
-# NGS Best Practice
+## NGS Best Practice
 
-## Introduction
+### Introduction
 
 The purpose of the project is to provide biologists and bioinformaticians new to the field with a single resource to find out about best practice for common high-throughput approaches.
 
@@ -13,7 +13,7 @@ We believe that by making best practices more accessible, the quality of analysi
 
 All the pages are stored on GitHub, and we encourage anyone to join and contribute to the materials.
 
-## About the team
+### About the team
 
 This webpage was first created as part of the TGAC workshop on science reproducibility, by:
 
